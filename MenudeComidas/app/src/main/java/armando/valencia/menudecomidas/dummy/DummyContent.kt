@@ -14,14 +14,14 @@ object DummyContent {
     /**
      * An array of sample (dummy) items.
      */
-    val ITEMS: MutableList<DummyItem> = ArrayList()
+    val ITEMS: MutableList<Comida> = ArrayList()
 
     /**
      * A map of sample (dummy) items, by ID.
      */
-    val ITEM_MAP: MutableMap<String, DummyItem> = HashMap()
+    val ITEM_MAP: MutableMap<String, Comida> = HashMap()
 
-    private val COUNT = 25
+    private val COUNT = 0
 
     init {
         // Add some sample items.
@@ -30,13 +30,23 @@ object DummyContent {
         }
     }
 
-    private fun addItem(item: DummyItem) {
+    fun addItem(item: Comida) {
         ITEMS.add(item)
-        ITEM_MAP.put(item.id, item)
+        ITEM_MAP.put(item.getId(), item)
     }
 
-    private fun createDummyItem(position: Int): DummyItem {
-        return DummyItem(position.toString(), "Item " + position, makeDetails(position))
+    fun updateItem(item:Comida){
+        ITEMS.set(ITEMS.indexOf(item), item)
+        ITEM_MAP.put(item.getId(), item)
+    }
+
+    fun deleteItem(item:Comida){
+        ITEMS.remove(item)
+        ITEM_MAP.remove(item)
+    }
+
+    private fun createDummyItem(position: Int): Comida {
+        return Comida(position.toString(), "Item " + position, makeDetails(position))
     }
 
     private fun makeDetails(position: Int): String {
@@ -48,10 +58,68 @@ object DummyContent {
         return builder.toString()
     }
 
+    fun getComida(name:String): Comida? {
+        for (comida:Comida in ITEMS){
+            if (comida.getName().equals(name)){
+                return comida
+            }
+        }
+        return null
+    }
+
     /**
      * A dummy item representing a piece of content.
      */
-    data class DummyItem(val id: String, val content: String, val details: String) {
-        override fun toString(): String = content
+    data class Comida(private var id: String,private var name: String,private var price: String) {
+
+        constructor() : this("","","") {
+
+        }
+
+        constructor(nombre:String, precio:String):this("", nombre, precio){
+            this.name = nombre
+            this.price = precio
+        }
+
+        fun getId():String{
+            return this.id
+        }
+
+        fun setId(id: String?){
+            this.id = id!!
+        }
+
+        fun getName():String{
+            return this.name
+        }
+
+        fun setName(name: String?){
+            this.name = name!!
+        }
+
+        fun getPrice():String{
+            return this.price
+        }
+
+        fun setPrice(price: String?){
+            this.price = price!!
+        }
+
+        override fun toString(): String = name
+
+        override fun equals(other: Any?): Boolean {
+            if (this === other) return true
+            if (javaClass != other?.javaClass) return false
+
+            other as Comida
+
+            if (id != other.id) return false
+
+            return true
+        }
+
+        override fun hashCode(): Int {
+            return id.hashCode()
+        }
     }
 }

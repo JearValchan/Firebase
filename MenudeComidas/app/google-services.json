@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "320710226201",
+    "firebase_url": "https://tutorial-firebase-d49ba.firebaseio.com",
+    "project_id": "tutorial-firebase-d49ba",
+    "storage_bucket": "tutorial-firebase-d49ba.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:320710226201:android:9654a0eb899f9c96c45588",
+        "android_client_info": {
+          "package_name": "armando.valencia.firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "320710226201-4poqprtbokmagep0e4linsaj5dmjit6d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDT6kkriVX1v3mrX4LlHZMuHcSfpMKuq0g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "320710226201-4poqprtbokmagep0e4linsaj5dmjit6d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:320710226201:android:0ab63ba699bafb73c45588",
+        "android_client_info": {
+          "package_name": "armando.valencia.menudecomidas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "320710226201-4poqprtbokmagep0e4linsaj5dmjit6d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDT6kkriVX1v3mrX4LlHZMuHcSfpMKuq0g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "320710226201-4poqprtbokmagep0e4linsaj5dmjit6d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
